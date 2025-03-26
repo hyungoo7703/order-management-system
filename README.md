@@ -5,6 +5,8 @@
 주문의 처리부터 관리까지 전체 프로세스를 효율적으로 관리하기 위한 시스템을 구축하고자 함 <br>
 이에 더하여, 접근 방식을 Domain-Driven Design(DDD)를 채택, 체계적인 모델링 학습을 목표
 
+> #### 정리링크 ☞ [DDD(Domain-Driven Design)](https://github.com/hyungoo7703/TIL/blob/main/etc/ddd.md)
+
 ## 넣고자 하는 기능
 
 ### 주문 처리
@@ -30,7 +32,7 @@
 > #### 프레임워크 & 언어
 + Spring Boot 3.4.2
 + Java 17
-+ MySQL 8.0
++ H2 2.1.214
 
 > #### 개발 도구
 + Gradle: 빌드 도구
