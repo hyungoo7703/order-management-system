@@ -26,7 +26,7 @@ public class MenuController {
                 request.getName(),
                 request.getDescription(),
                 request.getPrice(),
-                "KRW", // 기본 통화 설정
+                "KRW",
                 request.getStatus()
         );
 
@@ -60,7 +60,7 @@ public class MenuController {
                 request.getName(),
                 request.getDescription(),
                 request.getPrice(),
-                "KRW", // 기본 통화 설정
+                "KRW",
                 request.getStatus()
         );
 
