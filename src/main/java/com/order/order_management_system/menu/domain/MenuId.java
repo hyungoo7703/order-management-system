@@ -4,6 +4,5 @@ import lombok.Value;
 
 @Value
 public class MenuId {
-    //String인 이유: 보통 DDD에서는 UUID(Universally Unique Identifier)를 사용하여 ID를 생성
-    String value;
+    String value; // String인 이유: 보통 DDD에서는 UUID(Universally Unique Identifier)를 사용하여 ID를 생성
 }
