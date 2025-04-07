@@ -4,13 +4,13 @@
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://www.oracle.com/java/)
 [![H2](https://img.shields.io/badge/H2-2.1.214-blue)](https://www.h2database.com/)
 
-## 프로젝트 기획의도
+## 📌 프로젝트 기획의도
 주문의 처리부터 관리까지 전체 프로세스를 효율적으로 관리하기 위한 시스템을 구축하고자 함 <br>
 이에 더하여, 접근 방식을 Domain-Driven Design(DDD)를 채택, 체계적인 모델링 학습을 목표
 
 > #### 정리링크 ☞ [DDD(Domain-Driven Design)](https://github.com/hyungoo7703/TIL/blob/main/etc/ddd.md)
 
-## 넣고자 하는 기능
+## 📌 넣고자 하는 기능
 
 ### 주문 처리
 + 주문 생성 및 접수
@@ -30,6 +30,10 @@
 + 주문 통계량
 + 주문 처리 현황 통계
 
-## 📌 프로젝트 하이라이트
+## 📌 코드 작성방향
++ 일관된 요청/응답 구조를 위해 노력하고 비즈니스 로직을 중심으로 설계하여 도메인 모델의 순수성을 유지를 위해 주의한다.
++ Swagger 문서화를 위해 interfaces 레이어 컨트롤러들은 API 가시성 확보를 목표로 잡는다.
+   
+## 📌 프로젝트 하이라이트(작성중)
 
 
