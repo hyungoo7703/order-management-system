@@ -1,5 +1,8 @@
-# order-management-system
-효율적인 주문 처리와 관리를 위한 RESTful API 서버
+# 🚀 Order Management System
+**Domain-Driven Design 기반의 효율적 주문 처리 RESTful API 서버**  
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.2-brightgreen)](https://spring.io/)
+[![Java](https://img.shields.io/badge/Java-17-orange)](https://www.oracle.com/java/)
+[![H2](https://img.shields.io/badge/H2-2.1.214-blue)](https://www.h2database.com/)
 
 ## 프로젝트 기획의도
 주문의 처리부터 관리까지 전체 프로세스를 효율적으로 관리하기 위한 시스템을 구축하고자 함 <br>
@@ -27,13 +30,6 @@
 + 주문 통계량
 + 주문 처리 현황 통계
 
-## 프로젝트 기술 선택
+## 📌 프로젝트 하이라이트
 
-> #### 프레임워크 & 언어
-+ Spring Boot 3.4.2
-+ Java 17
-+ H2 2.1.214
-
-> #### 개발 도구
-+ Gradle: 빌드 도구
 
