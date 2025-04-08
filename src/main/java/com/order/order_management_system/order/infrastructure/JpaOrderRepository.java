@@ -2,9 +2,14 @@ package com.order.order_management_system.order.infrastructure;
 
 import com.order.order_management_system.menu.domain.*;
 import com.order.order_management_system.order.domain.*;
+import jakarta.persistence.Tuple;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -38,6 +43,34 @@ public class JpaOrderRepository implements OrderRepository {
         return springDataOrderRepository.findByStatus(status).stream()
                 .map(this::toDomain)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public OrderStatistics calculateStatistics(LocalDateTime startDate, LocalDateTime endDate) {
+        Long totalOrders = springDataOrderRepository.countByOrderDateBetween(startDate, endDate);
+
+        Double averageAmount = springDataOrderRepository.getAverageAmountByDateRange(startDate, endDate);
+
+        List<Object[]> statusCounts = springDataOrderRepository.countByStatusGrouped(startDate, endDate);
+        Map<OrderStatus, Long> statusCountMap = statusCounts.stream()
+                .collect(Collectors.toMap(
+                        arr -> (OrderStatus) arr[0],
+                        arr -> (Long) arr[1]
+                ));
+
+        List<Object[]> dailyCounts = springDataOrderRepository.countDailyOrders(startDate, endDate);
+        Map<LocalDate, Long> dailyCountMap = dailyCounts.stream()
+                .collect(Collectors.toMap(
+                        arr -> ((java.sql.Date) arr[0]).toLocalDate(),
+                        arr -> (Long) arr[1]
+                ));
+
+        return new OrderStatistics(
+                totalOrders,
+                averageAmount != null ? averageAmount : 0.0,
+                statusCountMap,
+                dailyCountMap
+        );
     }
 
     private OrderEntity toEntity(Order order) {
